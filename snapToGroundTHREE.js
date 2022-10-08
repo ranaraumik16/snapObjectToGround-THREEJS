@@ -1,5 +1,12 @@
 import * as THREE from './modules/three.module.js';
 
+/**
+ * This function move object to bottom using bounding box
+ *
+ * @param {THREE.Object3D} inObject Object which we want to snap to ground.
+ * @param {Array:Object3D} inFloorMesh Array of object of floors or any other object where we want our inObject to snap
+ * @return {Function} inCallBackFunc Optional callback function.
+ */
 export function snapObjectToBottom(inObject,inFloorMesh,inCallBackFunc) {
     
     if (!inObject) return 0
