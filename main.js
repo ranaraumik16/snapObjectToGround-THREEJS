@@ -35,7 +35,7 @@ function init() {
     let planeMat = new THREE.MeshLambertMaterial({color: 'green',side: THREE.DoubleSide})
     let plane = new THREE.Mesh(planeGeo,planeMat)
     scene.add(plane)
-    let planeMatWire = new THREE.MeshLambertMaterial({ color: 'red',wireframe: true })
+    let planeMatWire = new THREE.MeshLambertMaterial({ color: 0xffff00,wireframe: true })
     let planeWire = new THREE.Mesh(planeGeo, planeMatWire)
     scene.add(planeWire)
     floorMeshes.push(plane)

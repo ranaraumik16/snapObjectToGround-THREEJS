@@ -4,10 +4,10 @@ import * as THREE from './modules/three.module.js';
  * This function move object to bottom using bounding box
  *
  * @param {THREE.Object3D} inObject Object which we want to snap to ground.
- * @param {Array:Object3D} inFloorMesh Array of object of floors or any other object where we want our inObject to snap
+ * @param {Array:Object3D} inFloorMeshArr Array of object of floors or any other object on which we want our inObject to snap
  * @return {Function} inCallBackFunc Optional callback function.
  */
-export function snapObjectToBottom(inObject,inFloorMesh,inCallBackFunc) {
+export function snapObjectToBottom(inObject,inFloorMeshArr,inCallBackFunc) {
     
     if (!inObject) return 0
 
@@ -27,7 +27,7 @@ export function snapObjectToBottom(inObject,inFloorMesh,inCallBackFunc) {
 
     // Cast ray from center in negative Y direction to check intersection
     const raycaster = new THREE.Raycaster(castPoint, new THREE.Vector3(0, -1, 0));
-    let objectArr = [...inFloorMesh]
+    let objectArr = [...inFloorMeshArr]
     let objectIndex = objectArr.indexOf(inObject)
 
     if (objectIndex != -1) {
