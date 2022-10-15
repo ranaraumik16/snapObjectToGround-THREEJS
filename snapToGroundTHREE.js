@@ -5,9 +5,8 @@ import * as THREE from './modules/three.module.js';
  *
  * @param {THREE.Object3D} inObject Object which we want to snap to ground.
  * @param {Array:Object3D} inFloorMeshArr Array of object of floors or any other object on which we want our inObject to snap
- * @return {Function} inCallBackFunc Optional callback function.
  */
-export function snapObjectToBottom(inObject,inFloorMeshArr,inCallBackFunc) {
+export function snapObjectToBottom(inObject,inFloorMeshArr) {
     
     if (!inObject) return 0
 
@@ -34,9 +33,5 @@ export function snapObjectToBottom(inObject,inFloorMeshArr,inCallBackFunc) {
     if (!intersectObjects.length) return
 
     inObject.position.y -= intersectObjects[0].distance
-
-    if (inCallBackFunc) {
-        inCallBackFunc()
-    }
 
 }
