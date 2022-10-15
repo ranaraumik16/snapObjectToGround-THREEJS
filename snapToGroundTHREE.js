@@ -14,13 +14,10 @@ export function snapObjectToBottom(inObject,inFloorMeshArr,inCallBackFunc) {
     // Getting bounding box from scene object
     let box = new THREE.Box3()
     box.setFromObject(inObject)
-    console.log(box)
 
     // Getting bounding box center
     let center = new THREE.Vector3()
     box.getCenter(center)
-
-    console.log(center)
 
     let castPoint = center.clone()
     castPoint.y = box.min.y
@@ -35,14 +32,6 @@ export function snapObjectToBottom(inObject,inFloorMeshArr,inCallBackFunc) {
     }
     var intersectObjects = raycaster.intersectObjects(objectArr, true);
     if (!intersectObjects.length) return
-
-    let snapPointY = intersectObjects[0].point.y
-
-    console.log(snapPointY)
-
-    let centerToBottomY = box.min.y - snapPointY
-    console.log(centerToBottomY)
-
 
     inObject.position.y -= intersectObjects[0].distance
 
